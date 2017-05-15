@@ -1,8 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_1B98oCqQEee-NLL8OntpPw" name="RootElement">
-  <packagedElement xmi:type="uml:Activity" xmi:id="_1C-CMCqQEee-NLL8OntpPw" name="Activity1"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_3DmdMCqQEee-NLL8OntpPw" name="Partida"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_esUT0CqREee-NLL8OntpPw" name="Frase"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_nw89ECqREee-NLL8OntpPw" name="Letra"/>
-  <packagedElement xmi:type="uml:Class" xmi:id="_qEg7ICqREee-NLL8OntpPw" name="Enciclopedia"/>
-</uml:Model>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:Codegen="http://www.eclipse.org/papyrus/Codegen/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_1B98oCqQEee-NLL8OntpPw" name="RootElement">
+    <packagedElement xmi:type="uml:Activity" xmi:id="_1C-CMCqQEee-NLL8OntpPw" name="Activity1"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_3DmdMCqQEee-NLL8OntpPw" name="Partida"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_esUT0CqREee-NLL8OntpPw" name="Frase">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_j1EuoSqXEee-NLL8OntpPw" name="partida" type="_3DmdMCqQEee-NLL8OntpPw" association="_j1EHkCqXEee-NLL8OntpPw"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_zKG-8CqXEee-NLL8OntpPw" name="palabra" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_qEg7ICqREee-NLL8OntpPw" name="Enciclopedia"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_8JQoECqTEee-NLL8OntpPw" name="Arthur">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_1VyBwCqWEee-NLL8OntpPw" name="Life" visibility="private"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_O4Bs8CqXEee-NLL8OntpPw" name="Arthur[5]" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedAttribute>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_WRM58CqXEee-NLL8OntpPw" name="Dibujar"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_iAjdACqXEee-NLL8OntpPw" memberEnd="_iAtOACqXEee-NLL8OntpPw _iAt1ECqXEee-NLL8OntpPw" navigableOwnedEnd="_iAt1ECqXEee-NLL8OntpPw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_iAr_4CqXEee-NLL8OntpPw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_iAr_4SqXEee-NLL8OntpPw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_iAt1ECqXEee-NLL8OntpPw" name="partida" type="_3DmdMCqQEee-NLL8OntpPw" association="_iAjdACqXEee-NLL8OntpPw"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_iAtOACqXEee-NLL8OntpPw" name="arthur" type="_8JQoECqTEee-NLL8OntpPw" association="_iAjdACqXEee-NLL8OntpPw"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_j1EHkCqXEee-NLL8OntpPw" memberEnd="_j1EuoSqXEee-NLL8OntpPw _j1EuoiqXEee-NLL8OntpPw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_j1EHkSqXEee-NLL8OntpPw" source="org.eclipse.papyrus">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_j1EuoCqXEee-NLL8OntpPw" key="nature" value="UML_Nature"/>
+      </eAnnotations>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_j1EuoiqXEee-NLL8OntpPw" name="frase" type="_esUT0CqREee-NLL8OntpPw" association="_j1EHkCqXEee-NLL8OntpPw"/>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GcyMEDmXEee17640ogTD-A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GdAOgDmXEee17640ogTD-A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_GdXa4DmXEee17640ogTD-A">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GdXa4TmXEee17640ogTD-A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+  </uml:Model>
+  <Codegen:Project xmi:id="_Q49QADmXEee17640ogTD-A" base_Model="_1B98oCqQEee-NLL8OntpPw" projectName="AhorcadoPapyrus" sourceFolder="src"/>
+</xmi:XMI>
