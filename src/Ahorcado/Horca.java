@@ -19,11 +19,11 @@ public class Horca {
 	 * @return the fallos
 	 */
 	public int getFallos() {
-
+		return fallos;
 	}
 
 	public Horca() {
-
+		fallos = 0;
 	}
 
 	/**
@@ -31,13 +31,15 @@ public class Horca {
 	 */
 	public void dibujar() {
 
+		System.out.println("Fallos: " + fallos);
+
 	}
 
 	/**
 	 * incrementa el contador de fallos
 	 */
 	public void incrementarFallo() {
-
+		fallos++;
 	}
 
 	/**
@@ -46,6 +48,7 @@ public class Horca {
 	 * @return perdido
 	 */
 	public boolean comprobarSiPerdido() {
+		return (fallos == MAX_FALLOS);
 
 	}
 }
