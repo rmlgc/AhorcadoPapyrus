@@ -28,7 +28,10 @@ public class Palabra {
 	 * 
 	 */
 	public void elegirPalabra() {
+		String[] palabras = { "Jirafa", "Gato", "Gallo", "Elefante", "Rata", "Tortuga" };
+		String elegida = palabras[(int) Math.round((Math.random() * (palabras.length - 1)))];
 
+		palabraOculta = elegida;
 	}
 
 	/**
@@ -36,6 +39,21 @@ public class Palabra {
 	 */
 	public boolean comprobarLetraUsada(char letra) {
 
+		for (int i = 0; i < letrasDescubiertas.length; i++) {
+			if (letra == letrasDescubiertas[i]) {
+
+				return true;
+
+			}
+		}
+
+		for (int i = 0; i < letrasFallidas.length; i++) {
+			if (letra == letrasFallidas[i]) {
+
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
@@ -49,7 +67,15 @@ public class Palabra {
 	 */
 	public boolean comprobarLetra(char letra) {
 
-		
+		if (palabraOculta.indexOf(letra) == -1) {
+
+			insertarLetra(letra, letrasFallidas);
+
+			return false;
+		} else {
+			insertarLetra(letra, letrasDescubiertas);
+			return true;
+		}
 	}
 
 	/**
@@ -61,6 +87,13 @@ public class Palabra {
 	 */
 
 	private void insertarLetra(char letra, char[] destino) {
+		// inserta la letra en una posición vacía.
+		for (int i = 0; i < destino.length; i++) {
+			if (destino[i] == '\u0000') {
+				destino[i] = letra;
+				break;
+			}
+		}
 
 	}
 
@@ -69,7 +102,38 @@ public class Palabra {
 	 * fallidas
 	 */
 	public void mostrarResultados() {
+		char[] descompuesta = palabraOculta.toCharArray();
 
+		System.out.println("Progreso: ");
+		for (int i = 0; i < descompuesta.length; i++) {
+			boolean estaEndescubiertas = false;
+			for (int j = 0; j < letrasDescubiertas.length; j++) {
+				if (descompuesta[i] == letrasDescubiertas[j]) {
+					estaEndescubiertas = true;
+					break;
+				}
+			}
+			if (estaEndescubiertas)
+				System.out.println(descompuesta[i]);
+			else
+				System.out.println("_");
+		}
+		System.out.println();
+		System.out.println("Letras acertadas: ");
+
+		for (int i = 0; i < letrasDescubiertas.length; i++) {
+			if (letrasDescubiertas[i] == '\u0000')
+				System.out.println(letrasDescubiertas[i]);
+		}
+		System.out.println();
+
+		System.out.println("Letras falladas: ");
+		for (int i = 0; i < letrasFallidas.length; i++) {
+			if (letrasFallidas[i] == '\u0000')
+				System.out.println(letrasFallidas[i]);
+		}
+
+		System.out.println();
 	}
 
 	/**
@@ -79,6 +143,26 @@ public class Palabra {
 	 */
 	public boolean comprobarSiGanado() {
 
+		boolean estanTodas = true;
+		char[] descompuesta = palabraOculta.toCharArray();
+
+		for (int i = 0; i < descompuesta.length; i++) {
+			boolean estaEnDescubiertas = false;
+
+			for (int j = 0; j < letrasDescubiertas.length; j++) {
+
+				if (descompuesta[i] == letrasDescubiertas[j]) {
+					estaEnDescubiertas = true;
+					break;
+				}
+			}
+			if (!estaEnDescubiertas) {
+				estanTodas = false;
+				break;
+			}
+		}
+
+		return estanTodas;
 	}
 
 	/**
@@ -91,5 +175,7 @@ public class Palabra {
 	 */
 	public boolean comprobarPalabra(String palabra) {
 
+		return palabraOculta.equals(palabra);
+
 	}
-}
+};
