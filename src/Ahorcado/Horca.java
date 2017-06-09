@@ -16,23 +16,28 @@ public class Horca {
 	private int fallos;
 
 	/**
+	 * 
+	 */
+	public Horca() {
+		fallos = 0;
+	}
+
+	/**
 	 * @return the fallos
 	 */
 	public int getFallos() {
 		return fallos;
 	}
 
-	public Horca() {
-		fallos = 0;
+	public void setFallos(int fallos) {
+		this.fallos = fallos;
 	}
 
 	/**
 	 * 
 	 */
 	public void dibujar() {
-
 		System.out.println("Fallos: " + fallos);
-
 	}
 
 	/**
@@ -49,6 +54,5 @@ public class Horca {
 	 */
 	public boolean comprobarSiPerdido() {
 		return (fallos == MAX_FALLOS);
-
 	}
-}
+};
